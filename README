@@ -1,0 +1,6 @@
+Simple Unity demo
+
+Works on OSX for now and demonstrates how to recognize sound in Unity.
+
+Bindings are created with swig, see pocketsphinx/swig/charp for details.
+
