@@ -22,7 +22,7 @@ public class TestScript : MonoBehaviour {
 
 		source = GetComponent<AudioSource>();
 		source.volume = 0.05f; // Important because we can not mute
-		source.clip = Microphone.Start(null, true, 10, 44100);
+		source.clip = Microphone.Start(null, true, 1, 44100);
 		while (Microphone.GetPosition (null) <= 0) {	
 			// Waiting
 		}
