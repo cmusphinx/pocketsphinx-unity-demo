@@ -36,6 +36,7 @@ public class TestScript : MonoBehaviour {
 		Config c = Decoder.DefaultConfig();
 		c.SetString ("-hmm", "/usr/local/share/pocketsphinx/model/en-us/en-us");
 		c.SetString ("-dict", "/usr/local/share/pocketsphinx/model/en-us/cmudict-en-us.dict");
+		//c.SetString ("-rawlogdir", "/tmp");
 
 		c.SetString ("-keyphrase", "oh unity");
 		c.SetFloat ("-kws_threshold", 1e-30);
@@ -70,7 +71,7 @@ public class TestScript : MonoBehaviour {
 			for (int j = 0; j < channels; j++) {
 				sum += data [i * channels + j];
 			}
-			short val = (short)(sum / channels * 20000);
+			short val = (short)(sum / channels * 20000 / 0.05); // volume
 			byteData [2 * i] = (byte) (val & 0xff);
 			byteData [2 * i + 1] = (byte) (val >> 8);
 		}
